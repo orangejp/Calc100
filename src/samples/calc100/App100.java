@@ -10,6 +10,7 @@ public class App100 {
     private static boolean[] isUsed = new boolean[SIZE];
     private static StringBuilder rpnString;
     private static StringBuilder numberString = null;
+    private static int counter = 0;
 
     public static void main(String[] args) {
         try {
@@ -20,6 +21,10 @@ public class App100 {
         }
         App100.numberString = new StringBuilder(args[0]);
         createRpn(0, 0);
+        if (counter == 0) {
+            //解がない場合。
+            System.out.println("no answer");
+        }
     }
 
     /**
@@ -59,6 +64,7 @@ public class App100 {
         if (digit + ope == (2*SIZE - 1)) {
             try {
                 if (new Calc().eval100((rpnString.toString()))) {
+                    counter++;
                     System.out.println("OK - " + rpnString);
                 }
             } catch (RuntimeException e) {
