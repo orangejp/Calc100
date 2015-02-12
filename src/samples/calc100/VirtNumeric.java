@@ -1,7 +1,7 @@
 package samples.calc100;
 
 /**
- * Created by y_arakawa on 15/02/07.
+ * Created by orange on 15/02/07.
  */
 public class VirtNumeric {
 
